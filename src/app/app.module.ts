@@ -13,6 +13,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DetailComponent } from './pages/entity/detail/detail.component';
 import { EditComponent } from './pages/entity/edit/edit.component';
 import { ListComponent } from './pages/entity/list/list.component';
+import { AboutComponent } from './about/about.component';
+import { MovieComponent } from './pages/movie/movie.component';
+import { FormComponent } from './pages/movie/form/form.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { ListComponent } from './pages/entity/list/list.component';
     DetailComponent,
     EditComponent,
     ListComponent,
+    AboutComponent,
+    MovieComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,

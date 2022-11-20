@@ -6,10 +6,14 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DetailComponent } from './pages/entity/detail/detail.component';
 import { EditComponent } from './pages/entity/edit/edit.component';
 import { EntityComponent } from './pages/entity/entity.component';
+import { AboutComponent } from './about/about.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'dashboard', pathMatch: 'full', component: DashboardComponent },
+  { path: 'about', pathMatch: 'full', component: AboutComponent },
+  { path: 'movie', pathMatch: 'full', component: MovieComponent },
   {
     path: 'users',
     component: EntityComponent,
