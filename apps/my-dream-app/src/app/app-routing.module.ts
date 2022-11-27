@@ -8,12 +8,22 @@ import { MovieComponent } from './pages/movie/movie.component';
 import { ComponentUserComponent } from './features/component-user/component-user.component';
 import { AEditComponent } from './features/component-user/user-edit/user-edit.component';
 import { ADetailsComponent } from './features/component-user/user-details/user-details.component';
+import { EntityComponent } from './pages/entity/entity.component'
+import { EditComponent } from './pages/entity/edit/edit.component';
+import { ListComponent } from './pages/entity/list/list.component';
+import { DetailComponent } from './pages/entity/detail/detail.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'dashboard', pathMatch: 'full', component: DashboardComponent },
   { path: 'about', pathMatch: 'full', component: AboutComponent },
-  { path: 'movie', pathMatch: 'full', component: MovieComponent },
+  { path: 'movie',
+    component: EntityComponent,
+    children: [
+      { path: ':id', pathMatch: 'full', component: DetailComponent },
+      { path: ':id/edit', pathMatch: 'full', component: EditComponent },
+    ],
+  },
   {
     path: 'users',
     component: ComponentUserComponent,
