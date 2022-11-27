@@ -20,8 +20,8 @@ const routes: Routes = [
   { path: 'movie',
     component: EntityComponent,
     children: [
-      { path: ':id', pathMatch: 'full', component: DetailComponent },
-      { path: ':id/edit', pathMatch: 'full', component: EditComponent },
+      { path: ':_id', pathMatch: 'full', component: DetailComponent },
+      { path: ':_id/edit', pathMatch: 'full', component: EditComponent },
     ],
   },
   {
