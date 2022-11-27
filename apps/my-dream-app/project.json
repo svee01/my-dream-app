@@ -1,0 +1,96 @@
+{
+  "name": "my-dream-app",
+  "projectType": "application",
+  "generators": {},
+  "sourceRoot": "apps/my-dream-app/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/my-dream-app",
+        "index": "apps/my-dream-app/src/index.html",
+        "main": "apps/my-dream-app/src/main.ts",
+        "polyfills": "apps/my-dream-app/src/polyfills.ts",
+        "tsConfig": "apps/my-dream-app/tsconfig.app.json",
+        "assets": [
+          "apps/my-dream-app/src/favicon.ico",
+          "apps/my-dream-app/src/assets",
+          "apps/my-dream-app/src/_redirects"
+        ],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "apps/my-dream-app/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/my-dream-app/src/environments/environment.ts",
+              "with": "apps/my-dream-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "my-dream-app:build:production"
+        },
+        "development": {
+          "browserTarget": "my-dream-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "my-dream-app:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/my-dream-app/src/test.ts",
+        "polyfills": "apps/my-dream-app/src/polyfills.ts",
+        "tsConfig": "apps/my-dream-app/tsconfig.spec.json",
+        "karmaConfig": "apps/my-dream-app/karma.conf.js",
+        "assets": [
+          "apps/my-dream-app/src/favicon.ico",
+          "apps/my-dream-app/src/assets"
+        ],
+        "styles": [
+          "apps/my-dream-app/src/styles.css"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}
