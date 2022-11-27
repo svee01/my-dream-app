@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 1,
   "projects": {
     "my-dream-app": "apps/my-dream-app"
   }

@@ -34,9 +34,10 @@
 
 <h3>Entiteiten</h3>
 <p>
-    Er is nog maar 1 entiteit volgens de deelopdracht. Deze entiteit is voor een User.
+    Er zijn 2 entiteiten volgens de deelopdracht. Deze entiteiten zijn User en Movie.
     In de Angular web app kan je verschillende users aanmaken en bekijken. Hier zijn Users voor nodig.
-    Zie hieronder de User entiteit met toepassend plaatje.
+    Hetzelfde geldt voor Movies.
+    Zie hieronder de User en Movie entiteit met toepassend plaatje.
 </p>
 
 <img src="assets/images/angular-movie-erd.png" class="px-5 py-5" alt="..." />
@@ -51,6 +52,24 @@
             <li>emailAddress: string</li>
             <li>gender: Gender</li>
             <li>birthDate: Date</li>
+        </ul>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <p>Movie</p>
+        <ul>
+            <li>_id: string</li>
+            <li>title: string</li>
+            <li>year: int</li>
+            <li>rated: string</li>
+            <li>released: Date</li>
+            <li>runtime: int</li>
+            <li>countries: Array</li>
+            <li>genred: Array</li>
+            <li>director: string</li>
+            <li>actors: Array</li>
+            <li>writers: Array</li>
+            <li>plot: string</li>
+            <li>poster: string</li>
         </ul>
     </div>
 </div>

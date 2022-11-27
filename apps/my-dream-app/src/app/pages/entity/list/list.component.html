@@ -1,33 +1,38 @@
-<div class="component">
-    <p>list works!</p>
-    <table class="table">
+<div class="a-component">
+  <div class="row">
+      <div class="col">
+          <h1>Movie List</h1>
+      </div>
+      <div class="col text-end">
+          <button type="button" class="btn btn-primary" routerLink="new">
+              New Movie
+          </button>
+      </div>
+  </div>
+
+  <table class="table">
       <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Year</th>
+          </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row"><a routerLink="1">1</a></th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row"><a routerLink="2">2</a></th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row"><a routerLink="3">3</a></th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+          <tr *ngFor="let movie of movies; let i = index">
+              <th scope="row">{{ i }}</th>
+              <td>{{ movie._id }}</td>
+              <td>
+                  <a
+                      routerLink="{{ movie._id }}"
+                      routerLinkActive="active"
+                      ariaCurrentWhenActive="page"
+                      >{{ movie.title }} {{ movie.year }}</a
+                  >
+              </td>
+              <!-- <td>{{ user.gender }}</td> -->
+          </tr>
       </tbody>
-    </table>
-  </div>
+  </table>
+</div>
