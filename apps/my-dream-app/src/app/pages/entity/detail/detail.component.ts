@@ -5,8 +5,8 @@ import { EntityService } from "../entity.service";
 
 @Component({
     selector: "app-details",
-    templateUrl: "./details.component.html",
-    styleUrls: ["./details.component.css"],
+    templateUrl: "./detail.component.html",
+    styleUrls: ["./detail.component.css"],
 })
 export class DetailComponent implements OnInit {
     componentId: string | null | undefined;
@@ -39,7 +39,7 @@ export class DetailComponent implements OnInit {
         });
     }
 
-    deleteUser(_id: string) {
+    deleteMovie(_id: string) {
       this.userService.deleteMovie(_id);
     }
 }
